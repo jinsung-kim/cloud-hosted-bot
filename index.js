@@ -10,7 +10,7 @@ var version = "1.0.1";
 const PREFIX = "!"
 
 bot.on("ready", () => {
-    console.log("Music queue bot is online");
+    console.log("Music queue bot is online and running");
 });
 
 bot.on("message", message => {
@@ -30,8 +30,6 @@ bot.on("message", message => {
         // case:
         //     message.channel.sendMessage("That nigga retarded");
         //     break;
-        default:
-            message.channel.sendMessage("Command not understood");
     }
 });
 
