@@ -53,7 +53,7 @@ bot.on("message", message => {
             var server = servers[message.guild.id];
             // Add song to the queue
             server.queue.push(args[1]);
-            if (!message.guild.voiceConnection) message.member.join().then(function(connection) {
+            if (!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection) {
                 play(connection, message);
             });
             break;
