@@ -1,7 +1,8 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 
-const token = "NjY5MDQyNjQ3MzM5NDk5NTg1.XiaJLQ.4fukQE_fkMdjNdBtR3V5P3eX0mY";
+// Token changed
+const token = "NjY5MDQyNjQ3MzM5NDk5NTg1.Xiav9g.nLMJTThge2h5GSP-bCdGtF92kUA";
 
 var version = "1.0.1";
 
@@ -9,7 +10,7 @@ var version = "1.0.1";
 const PREFIX = "!"
 
 bot.on("ready", () => {
-    console.log("Queue bot is online");
+    console.log("Music queue bot is online");
 });
 
 bot.on("message", message => {
