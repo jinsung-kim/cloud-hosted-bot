@@ -1,9 +1,6 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 
-// Token changed
-const token = "NjY5MDQyNjQ3MzM5NDk5NTg1.Xiav9g.nLMJTThge2h5GSP-bCdGtF92kUA";
-
 var version = "1.0.1";
 
 // For commands
@@ -33,4 +30,4 @@ bot.on("message", message => {
     }
 });
 
-bot.login(token);
+bot.login(process.env.BOT_TOKEN);
