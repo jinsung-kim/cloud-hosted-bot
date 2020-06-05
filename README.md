@@ -2,7 +2,7 @@
 A cloud hosted Discord bot to play music given links:
 
 ## Commands
-!info: Returns the version of the bot
+!info: Returns the version of the bot \n
 !help: Accessible commands
 !play [link]: Plays the given Youtube link, queues if song is currently playing
 !clear: Clears the queue of music in the voice channel
