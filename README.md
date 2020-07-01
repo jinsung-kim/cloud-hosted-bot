@@ -7,4 +7,4 @@ A cloud hosted Discord bot to play music given links:
 !play [link]: Plays the given Youtube link, queues if song is currently playing\
 !clear: Clears the queue of music in the voice channel\
 \
-Feel free to copy the code and use it on your own server! :)
+Feel free to copy the code and use it on your own server!
