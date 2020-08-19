@@ -42,7 +42,7 @@ bot.on("message", message => {
                     } else {
                         connection.disconnect();
                     }
-                })
+                });
 
             } 
             if (!args[1]) return message.reply("You need to follow up with a link");
@@ -57,9 +57,28 @@ bot.on("message", message => {
                 play(connection, message);
             });
             break;
+        case "skip":
+            var server = servers[message.guild.id];
+            if (server.dispatcher) server.dispatcher.end();
+            message.channel.send("Skipping current track");
+            break;
+        case "stop":
+            var server = servers[message.guild.id];
+            if (message.guild.voiceConnection) {
+                for (var i = server.queue.length - 1; i > 0; --i) {
+                    server.queue.splie(i, 1);
+                }
+                server.dispatcher.end();
+                // Tells channel the queue is being ended
+                message.channel.send("Ending the queue and leaving this voice channel");
+                console.log("Stopped the queue");
+                if (message.guild.connection) message.guild.voiceConnection.disconnect(); 
+            }
+            break;
         case "help":
-            message.channel.send("Commands:");
-            message.channel.send("!play [Youtube Link]: Queue a song");
+            message.channel.send("Commands: \n !play [Youtube Link]: Plays the linked song \n \
+                                  !skip: Skips the current song \n \
+                                  !stop: Deletes all of the songs in the queue");
     }
 });
 
